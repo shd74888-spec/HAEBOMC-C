@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해봄건설 | 공공시설 유지보수 · 녹화 · 판넬 전문기업</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#1C1E2D',
+                            dark: '#12141F',
+                            light: '#282B3E',
+                            accent: '#343850'
+                        },
+                        amber: {
+                            gold: '#C5A059',
+                            bright: '#D4AF37',
+                            dark: '#9E7D3B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome 6.5.1 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts (Noto Sans KR & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #12141F; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E5C26B; }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #E5C26B 40%, #C5A059 80%, #9E7D3B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-button-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9E7D3B 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-button-gradient:hover {
+            background: linear-gradient(135deg, #E5C26B 0%, #D4AF37 50%, #B89248 100%);
+            box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.4);
+        }
+
+        .img-zoom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-zoom:hover {
+            transform: scale(1.015);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 smooth-scroll antialiased selection:bg-amber-gold selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-navy-accent/60 shadow-xl text-white">
+        <!-- Top Info Bar -->
+        <div class="bg-navy-dark text-slate-300 text-xs py-2 px-4 border-b border-navy-accent/40">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 bg-amber-gold/20 text-[#E5C26B] font-bold px-2.5 py-0.5 rounded border border-[#C5A059]/40 text-[11px] whitespace-nowrap">
+                        <i class="fa-solid fa-ribbon text-xs"></i> 여성기업 인증업체
+                    </span>
+                    <span class="text-slate-400 hidden sm:inline">|</span>
+                    <span class="text-slate-300 text-[11px] sm:text-xs">인천 · 시흥 · 안산 · 광명 · 부천 및 경기/강원 전지역 대응</span>
+                </div>
+                <div class="flex items-center gap-4 text-[11px] sm:text-xs">
+                    <a href="tel:031-435-1234" class="hover:text-[#E5C26B] transition-colors font-medium"><i class="fa-solid fa-phone mr-1.5 text-[#C5A059]"></i>031-435-1234</a>
+                    <span class="text-slate-600">|</span>
+                    <a href="mailto:shd7488@daum.net" class="hover:text-[#E5C26B] transition-colors font-medium"><i class="fa-solid fa-envelope mr-1.5 text-[#C5A059]"></i>shd7488@daum.net</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group flex-shrink-0">
+                <div class="w-11 h-11 rounded-xl gold-button-gradient flex items-center justify-center text-navy-dark font-black text-2xl shadow-lg shadow-amber-gold/20 group-hover:scale-105 transition-transform">
+                    HB
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-[#E5C26B] transition-colors whitespace-nowrap">해봄건설</span>
+                        <span class="bg-[#C5A059] text-navy-dark text-[10px] font-black px-2 py-0.5 rounded shadow-sm whitespace-nowrap">HB C&C</span>
+                    </div>
+                    <span class="block text-[11px] font-medium text-slate-300 tracking-wider whitespace-nowrap">공공시설 유지보수 · 녹화 · 판넬 전문</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-4 lg:gap-7 text-xs lg:text-sm font-bold text-slate-200 whitespace-nowrap">
+                <a href="#about" class="hover:text-[#E5C26B] transition-colors">회사소개</a>
+                <a href="#business" class="hover:text-[#E5C26B] transition-colors">주요사업분야</a>
+                <a href="#portfolio" class="hover:text-[#E5C26B] transition-colors">시공사례 (전·후)</a>
+                <a href="#strengths" class="hover:text-[#E5C26B] transition-colors">핵심경쟁력</a>
+                <a href="#contact" class="hover:text-[#E5C26B] transition-colors">견적문의</a>
+            </nav>
+
+            <!-- Direct Phone Call CTA -->
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <a href="tel:010-7488-4641" class="inline-flex items-center gap-2 sm:gap-2.5 gold-button-gradient text-navy-dark px-3.5 sm:px-5 py-2.5 rounded-xl font-black text-xs sm:text-sm shadow-xl transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
+                    <i class="fa-solid fa-phone-volume text-sm animate-pulse text-navy-dark"></i>
+                    <span class="hidden xl:inline">서상욱 이사</span>
+                    <span>010-7488-4641</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative bg-navy text-white overflow-hidden py-16 lg:py-24 border-b border-navy-accent">
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy-dark/90 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7">
+                    <!-- Badges -->
+                    <div class="flex flex-wrap items-center gap-2 mb-6">
+                        <span class="inline-flex items-center gap-1.5 bg-[#C5A059]/20 border border-[#C5A059]/50 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#E5C26B] backdrop-blur-sm">
+                            <i class="fa-solid fa-award"></i> 여성기업 인증업체
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-200">
+                            <i class="fa-solid fa-shield-halved text-[#E5C26B]"></i> 공공시설 유지보수 전문
+                        </span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6 text-white">
+                        작은 보수 하나도 <br class="hidden sm:block">
+                        <span class="gold-gradient-text">책임감 있게, 안전하게</span><br>
+                        시공합니다.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-200 mb-8 leading-relaxed max-w-2xl font-normal">
+                        해봄건설(HB C&C)은 학교 · 관공서 · 체육시설 · 복지관 보수부터 친환경 법면녹화(해봄에코그린), 공장/창고 판넬시스템까지 설계부터 시공까지 완벽한 원스톱 솔루션을 제공합니다.
+                    </p>
+
+                    <!-- Quick Key Metrics -->
+                    <div class="grid grid-cols-3 gap-4 py-6 border-y border-navy-accent/80 mb-8">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-[#E5C26B]"><i class="fa-solid fa-shield-check mr-1"></i>100%</div>
+                            <div class="text-xs text-slate-300 mt-1 font-medium">안전수칙 준수 시공</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-[#E5C26B]"><i class="fa-solid fa-bolt mr-1"></i>FAST</div>
+                            <div class="text-xs text-slate-300 mt-1 font-medium">긴급보수 즉시 출동</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-[#E5C26B]"><i class="fa-solid fa-handshake mr-1"></i>A/S</div>
+                            <div class="text-xs text-slate-300 mt-1 font-medium">철저한 사후관리</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:010-7488-4641" class="inline-flex items-center justify-center gap-3 gold-button-gradient text-navy-dark font-black px-8 py-4 rounded-xl shadow-xl transition-all text-base">
+                            <i class="fa-solid fa-phone-volume text-lg animate-pulse text-navy-dark"></i>
+                            <span>상담 전화 연결 (서상욱 이사)</span>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-navy-light hover:bg-navy-accent border border-slate-600 text-white font-bold px-8 py-4 rounded-xl transition-all text-base">
+                            <i class="fa-regular fa-file-lines text-[#E5C26B]"></i>
+                            <span>온라인 무료 견적신청</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Cards Grid (Equalized Grid Heights) -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 items-stretch">
+                    <div class="bg-navy-light p-6 rounded-2xl border border-navy-accent shadow-2xl hover:border-[#C5A059]/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center text-2xl mb-4 border border-[#C5A059]/30">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-lg mb-1">해봄건설</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">학교 · 관공서 · 복지관 · 체육관 · 공원 시설보수</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-light p-6 rounded-2xl border border-navy-accent shadow-2xl hover:border-[#C5A059]/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 border border-emerald-500/30">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-lg mb-1">해봄에코그린</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">법면녹화 · 사면복구 · 녹생토 · 식생매트 전문</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-light p-6 rounded-2xl border border-navy-accent shadow-2xl hover:border-[#C5A059]/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 border border-blue-500/30">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-lg mb-1">해봄판넬시스템</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">공장 · 창고 · 가설건축물 설계/시공 원스톱</p>
+                        </div>
+                    </div>
+
+                    <div class="gold-button-gradient p-6 rounded-2xl border border-[#E5C26B]/50 shadow-2xl flex flex-col justify-between text-navy-dark">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-navy-dark/20 text-navy-dark flex items-center justify-center text-2xl mb-4 font-black border border-navy-dark/20">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h3 class="font-extrabold text-navy-dark text-lg mb-1">여성기업 인증</h3>
+                            <p class="text-xs text-navy-dark/90 font-medium leading-relaxed">신뢰와 책임을 바탕으로 한 차별화된 시공 품질</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#E5C26B] font-bold text-sm uppercase tracking-widest block mb-2">About HB Construction</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">사람을 먼저 생각하는 시설물 유지관리 전문기업</h2>
+                <div class="w-16 h-1 gold-button-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Philosophy Cards: '專心' & '相生' -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-navy p-8 rounded-2xl border border-navy-accent shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-6 -bottom-6 text-slate-800/20 text-9xl font-black select-none pointer-events-none group-hover:text-[#C5A059]/10 transition-colors">
+                        專心
+                    </div>
+                    <div class="inline-flex items-center gap-2 bg-[#C5A059]/20 text-[#E5C26B] px-3.5 py-1 rounded-md text-xs font-bold mb-4 border border-[#C5A059]/30">
+                        경영철학 01
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-2">『專心』 - 마음을 오로지 한곳에만 기울임</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        작은 보수 공사 하나라도 소홀히 하지 않고, 현장의 안전과 완벽한 마무리만을 생각하며 오직 고객의 만족을 위해 온 마음을 다합니다.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A059]"></i> 소액 보수공사도 성실하고 꼼꼼하게 시공</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A059]"></i> 체계적인 안전수칙 준수 및 시공품질 관리</li>
+                    </ul>
+                </div>
+
+                <div class="bg-navy p-8 rounded-2xl border border-navy-accent shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-6 -bottom-6 text-slate-800/20 text-9xl font-black select-none pointer-events-none group-hover:text-[#C5A059]/10 transition-colors">
+                        相生
+                    </div>
+                    <div class="inline-flex items-center gap-2 bg-[#C5A059]/20 text-[#E5C26B] px-3.5 py-1 rounded-md text-xs font-bold mb-4 border border-[#C5A059]/30">
+                        경영철학 02
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-2">『相生』 - 둘 이상이 북돋으며 다 같이 잘 살아감</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        지방자치단체, 교육청, 공공기관 및 관공서와의 든든한 파트너십을 바탕으로 지역사회와 자연환경이 함께 상생하는 친환경 공간을 만듭니다.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A059]"></i> 인천·경기·강원 지역밀착형 신속 서비스</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#C5A059]"></i> 합리적 견적 산정 및 책임감 있는 사후관리</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4 Management Policies -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-navy-light p-5 rounded-xl border border-navy-accent text-center">
+                    <i class="fa-solid fa-shield-heart text-3xl text-[#E5C26B] mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Safety First</h4>
+                    <p class="text-xs text-slate-400 mt-1">철저한 안전관리가 최우선</p>
+                </div>
+                <div class="bg-navy-light p-5 rounded-xl border border-navy-accent text-center">
+                    <i class="fa-solid fa-gem text-3xl text-[#E5C26B] mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Quality First</h4>
+                    <p class="text-xs text-slate-400 mt-1">고품질 자재와 완벽 시공</p>
+                </div>
+                <div class="bg-navy-light p-5 rounded-xl border border-navy-accent text-center">
+                    <i class="fa-solid fa-handshake-angle text-3xl text-[#E5C26B] mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Customer Trust</h4>
+                    <p class="text-xs text-slate-400 mt-1">정직과 신뢰의 보수 파트너</p>
+                </div>
+                <div class="bg-navy-light p-5 rounded-xl border border-navy-accent text-center">
+                    <i class="fa-solid fa-clock-rotate-left text-3xl text-[#E5C26B] mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Quick Response</h4>
+                    <p class="text-xs text-slate-400 mt-1">민원 및 긴급보수 즉시출동</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Divisions Section -->
+    <section id="business" class="py-20 bg-slate-100 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#9E7D3B] font-bold text-sm uppercase tracking-widest block mb-2">Business Areas</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-dark">해봄건설 3대 주요 사업분야</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">각 분야별 전문가들이 정직하고 정밀하게 현장을 관리합니다.</p>
+                <div class="w-16 h-1 gold-button-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Division 1: 해봄건설 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover:shadow-2xl transition-all flex flex-col">
+                    <div class="bg-navy text-white p-6 relative">
+                        <div class="inline-block bg-[#C5A059] text-navy-dark text-[11px] font-black px-2.5 py-1 rounded mb-2">여성기업 인증</div>
+                        <h3 class="text-2xl font-black text-white">01. 해봄건설</h3>
+                        <p class="text-xs text-slate-300 mt-1 font-medium">공공시설 유지관리 전문기업</p>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                학교, 관공서, 체육관, 복지관, 공원시설의 노후화된 시설을 안전하고 쾌적하게 유지보수합니다.
+                            </p>
+                            <h4 class="text-xs font-bold text-navy-dark mb-3 uppercase tracking-wider">주요 수행 업무</h4>
+                            <ul class="space-y-2 text-xs text-slate-700 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C5A059]"></i> 학교시설물 및 운동장/체육관 보수</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C5A059]"></i> 관공서 외부계단, 화장실 개보수</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C5A059]"></i> 휀스(울타리) 및 보도블럭 교체</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#C5A059]"></i> 외벽 방수 및 내부 도장 공사</li>
+                            </ul>
+                        </div>
+                        <a href="tel:010-7488-4641" class="w-full py-3 bg-navy text-white font-bold text-xs rounded-xl text-center hover:bg-navy-light transition-colors block">
+                            해봄건설 견적 문의 <i class="fa-solid fa-arrow-right text-xs ml-1 text-[#E5C26B]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Division 2: 해봄에코그린 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover:shadow-2xl transition-all flex flex-col">
+                    <div class="bg-emerald-950 text-white p-6 relative">
+                        <div class="inline-block bg-emerald-500 text-white text-[11px] font-black px-2.5 py-1 rounded mb-2">친환경 사면복구</div>
+                        <h3 class="text-2xl font-black text-white">02. 해봄에코그린</h3>
+                        <p class="text-xs text-emerald-200 mt-1 font-medium">법면녹화 · 사면복구 전문 (경기/강원)</p>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                토사 사면부터 급경사 암반까지, 최첨단 녹생토 및 씨스프레이 공법으로 푸른 자연환경을 복원합니다.
+                            </p>
+                            <h4 class="text-xs font-bold text-emerald-900 mb-3 uppercase tracking-wider">주요 수행 업무</h4>
+                            <ul class="space-y-2 text-xs text-slate-700 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 씨스프레이(Seed Spray) 공법</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 녹생토(건식/습식) 및 낙석방지망</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 코아네트 · 식생매트 · 능형망 시공</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 도로 개설 및 하천 득방 생태복원</li>
+                            </ul>
+                        </div>
+                        <a href="tel:010-7488-4641" class="w-full py-3 bg-emerald-800 text-white font-bold text-xs rounded-xl text-center hover:bg-emerald-700 transition-colors block">
+                            에코그린 견적 문의 <i class="fa-solid fa-arrow-right text-xs ml-1 text-emerald-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Division 3: 해봄판넬시스템 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover:shadow-2xl transition-all flex flex-col">
+                    <div class="bg-blue-950 text-white p-6 relative">
+                        <div class="inline-block bg-blue-500 text-white text-[11px] font-black px-2.5 py-1 rounded mb-2">원스톱 솔루션</div>
+                        <h3 class="text-2xl font-black text-white">03. 해봄판넬시스템</h3>
+                        <p class="text-xs text-blue-200 mt-1 font-medium">공장 · 창고 · 가설건축물 설계/시공</p>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                소형 농사 창고부터 대형 산업단지 공장, 가설건축물까지 우수한 자재로 설계부터 완공까지 책임집니다.
+                            </p>
+                            <h4 class="text-xs font-bold text-blue-900 mb-3 uppercase tracking-wider">주요 수행 업무</h4>
+                            <ul class="space-y-2 text-xs text-slate-700 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"></i> 우레탄 · EPS · 그라스울 · 징크판넬</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"></i> 공장, 창고, 세트장, 막사 신축</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"></i> 지붕/외벽 전용 판넬 개보수</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"></i> 지하철/예비군 가설건축물 설치</li>
+                            </ul>
+                        </div>
+                        <a href="tel:010-7488-4641" class="w-full py-3 bg-blue-900 text-white font-bold text-xs rounded-xl text-center hover:bg-blue-800 transition-colors block">
+                            판넬시스템 견적 문의 <i class="fa-solid fa-arrow-right text-xs ml-1 text-blue-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Portfolio Section (Using photo1.png, photo2.png, photo3.png) -->
+    <section id="portfolio" class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-[#E5C26B] font-bold text-sm uppercase tracking-widest block mb-2">Proven Track Record</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">해봄건설 주요 시공사례 (전·후)</h2>
+                <p class="text-slate-300 mt-2 text-sm sm:text-base">이미지를 클릭하시면 고화질 원본으로 크게 보실 수 있습니다.</p>
+                <div class="w-16 h-1 gold-button-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Portfolio Tab Controls -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="switchTab('all')" id="tab-all" class="px-5 py-2.5 rounded-xl font-bold text-xs transition-all gold-button-gradient text-navy-dark shadow-lg">
+                    전체보기
+                </button>
+                <button onclick="switchTab('p1')" id="tab-p1" class="px-5 py-2.5 rounded-xl font-bold text-xs transition-all bg-navy-light text-slate-300 hover:text-white border border-navy-accent">
+                    01. 해봄건설 (공공시설)
+                </button>
+                <button onclick="switchTab('p2')" id="tab-p2" class="px-5 py-2.5 rounded-xl font-bold text-xs transition-all bg-navy-light text-slate-300 hover:text-white border border-navy-accent">
+                    02. 해봄에코그린 (법면녹화)
+                </button>
+                <button onclick="switchTab('p3')" id="tab-p3" class="px-5 py-2.5 rounded-xl font-bold text-xs transition-all bg-navy-light text-slate-300 hover:text-white border border-navy-accent">
+                    03. 해봄판넬시스템 (판넬/가설)
+                </button>
+            </div>
+
+            <!-- Portfolio Image Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Board 1: 해봄건설 -->
+                <div class="portfolio-card p1 bg-navy-light rounded-2xl overflow-hidden border border-navy-accent shadow-2xl flex flex-col justify-between">
+                    <div class="p-4 border-b border-navy-accent flex justify-between items-center">
+                        <span class="text-xs font-extrabold text-[#E5C26B]">01. 해봄건설</span>
+                        <span class="text-[11px] text-slate-400">공공시설 유지보수 사례</span>
+                    </div>
+                    <div class="relative group cursor-pointer overflow-hidden p-3" onclick="openModal('photo1.png', '해봄건설 공공시설 유지보수 시공사례')">
+                        <img src="photo1.png" onerror="this.onerror=null; this.src='https://placehold.co/800x550/1C1E2D/C5A059?text=해봄건설+공공시설+시공사례';" alt="해봄건설 공공시설 유지보수 시공사례" class="w-full h-auto rounded-lg img-zoom shadow-md">
+                        <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg m-3 backdrop-blur-xs">
+                            <span class="bg-[#C5A059] text-navy-dark text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> 크게 보기
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-dark/60 text-xs text-slate-300">
+                        계단정비 · 화장실개보수 · 보도블럭 · 휀스 · 외벽방수 · 배수로 정비
+                    </div>
+                </div>
+
+                <!-- Board 2: 해봄에코그린 -->
+                <div class="portfolio-card p2 bg-navy-light rounded-2xl overflow-hidden border border-navy-accent shadow-2xl flex flex-col justify-between">
+                    <div class="p-4 border-b border-navy-accent flex justify-between items-center">
+                        <span class="text-xs font-extrabold text-emerald-400">02. 해봄에코그린</span>
+                        <span class="text-[11px] text-slate-400">법면녹화 & 사면복구 사례</span>
+                    </div>
+                    <div class="relative group cursor-pointer overflow-hidden p-3" onclick="openModal('photo2.png', '해봄에코그린 법면녹화 시공사례')">
+                        <img src="photo2.png" onerror="this.onerror=null; this.src='https://placehold.co/800x550/064e3b/10b981?text=해봄에코그린+법면녹화+시공사례';" alt="해봄에코그린 법면녹화 시공사례" class="w-full h-auto rounded-lg img-zoom shadow-md">
+                        <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg m-3 backdrop-blur-xs">
+                            <span class="bg-emerald-500 text-navy-dark text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> 크게 보기
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-dark/60 text-xs text-slate-300">
+                        씨스프레이 · 녹생토 · 도로/군부대 비탈면 · 하천득방 · 공원 경사면
+                    </div>
+                </div>
+
+                <!-- Board 3: 해봄판넬시스템 -->
+                <div class="portfolio-card p3 bg-navy-light rounded-2xl overflow-hidden border border-navy-accent shadow-2xl flex flex-col justify-between">
+                    <div class="p-4 border-b border-navy-accent flex justify-between items-center">
+                        <span class="text-xs font-extrabold text-blue-400">03. 해봄판넬시스템</span>
+                        <span class="text-[11px] text-slate-400">판넬 & 가설건축물 사례</span>
+                    </div>
+                    <div class="relative group cursor-pointer overflow-hidden p-3" onclick="openModal('photo3.png', '해봄판넬시스템 판넬시공 시공사례')">
+                        <img src="photo3.png" onerror="this.onerror=null; this.src='https://placehold.co/800x550/1e3a8a/60a5fa?text=해봄판넬시스템+판넬+시공사례';" alt="해봄판넬시스템 판넬시공 시공사례" class="w-full h-auto rounded-lg img-zoom shadow-md">
+                        <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg m-3 backdrop-blur-xs">
+                            <span class="bg-blue-500 text-navy-dark text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> 크게 보기
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-dark/60 text-xs text-slate-300">
+                        외벽/지붕판넬 · 소형/대형창고 · 세트장 · 가설막사 · 우레탄/EPS/징크
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Strengths Section -->
+    <section id="strengths" class="py-20 bg-slate-900 text-white border-t border-navy-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <span class="text-[#E5C26B] font-bold text-sm uppercase tracking-widest block mb-2">Why Choose Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight mb-6">
+                        해봄건설이 끊임없이 <br>
+                        선택받는 <span class="gold-gradient-text">6가지 핵심 이유</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                        오랜 현장 경험과 확실한 A/S, 정직한 견적으로 관공서와 학교, 기업의 든든한 시설관리 파트너가 되고 있습니다.
+                    </p>
+                    <a href="tel:010-7488-4641" class="inline-flex items-center gap-2 gold-button-gradient text-navy-dark font-black px-6 py-3.5 rounded-xl shadow-lg">
+                        <i class="fa-solid fa-headset"></i> 서상욱 이사 다이렉트 상담
+                    </a>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">긴급보수 신속 대응</h4>
+                        <p class="text-xs text-slate-400">민원 및 시설물 문제 발생 시 수도권/경기 현장 즉시 출동</p>
+                    </div>
+
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">책임 사후관리 (A/S)</h4>
+                        <p class="text-xs text-slate-400">시공 후 지속적인 점검 및 완벽한 A/S 보장</p>
+                    </div>
+
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">소규모 공사 전문</h4>
+                        <p class="text-xs text-slate-400">소액 개보수 공사도 성실하고 꼼꼼하게 끝까지 책임 시공</p>
+                    </div>
+
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">합리적인 투명 견적</h4>
+                        <p class="text-xs text-slate-400">거품 없는 단가 산정과 빠른 표준 견적서 발송</p>
+                    </div>
+
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">안전 우선 시공</h4>
+                        <p class="text-xs text-slate-400">현장 안전수칙 철저 준수 및 체계적인 안전관리</p>
+                    </div>
+
+                    <div class="bg-navy p-5 rounded-xl border border-navy-accent">
+                        <div class="w-10 h-10 rounded-lg bg-[#C5A059]/20 text-[#E5C26B] flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm mb-1">지역 밀착형 서비스</h4>
+                        <p class="text-xs text-slate-400">인천, 시흥, 안산, 광명, 부천 및 경기/강원 밀착 대응</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Form Section -->
+    <section id="contact" class="py-20 bg-slate-100 text-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-200">
+                <div class="text-center mb-10">
+                    <span class="text-[#9E7D3B] font-bold text-xs uppercase tracking-widest block mb-2">Fast Quote Request</span>
+                    <h2 class="text-3xl font-black text-navy-dark">온라인 간편 견적문의</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                        현장 정보를 남겨주시면 담당자(서상욱 이사)가 빠르게 확인 후 친절히 상담해 드립니다.
+                    </p>
+                </div>
+
+                <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">성함 / 담당자명 <span class="text-red-500">*</span></label>
+                            <input type="text" required placeholder="예: 홍길동 팀장" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#C5A059] focus:outline-none text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">연락처 <span class="text-red-500">*</span></label>
+                            <input type="tel" required placeholder="예: 010-0000-0000" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#C5A059] focus:outline-none text-sm bg-slate-50">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">현장 위치 (지역) <span class="text-red-500">*</span></label>
+                            <input type="text" required placeholder="예: 경기도 시흥시 은계동" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#C5A059] focus:outline-none text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">시공 희망 분야 <span class="text-red-500">*</span></label>
+                            <select required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#C5A059] focus:outline-none text-sm bg-slate-50">
+                                <option value="">선택해주세요</option>
+                                <option value="hb">01. 해봄건설 (학교/관공서/공공시설 유지보수)</option>
+                                <option value="eco">02. 해봄에코그린 (법면녹화/사면복구/녹생토)</option>
+                                <option value="panel">03. 해봄판넬시스템 (공장/창고/가설건축물)</option>
+                                <option value="other">기타 / 전체 상담</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">상세 문의 내용</label>
+                        <textarea rows="4" placeholder="예: 약 300㎡ 비탈면 녹생토 시공 견적 문의합니다." class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#C5A059] focus:outline-none text-sm bg-slate-50"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gold-button-gradient text-navy-dark font-black py-4 rounded-xl shadow-xl text-base transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2 text-navy-dark"></i> 견적 문의 제출하기
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-navy-dark text-slate-400 py-12 border-t border-navy-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 pb-8 border-b border-navy-accent/50">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-2xl font-black text-white">해봄건설</span>
+                        <span class="bg-[#C5A059] text-navy-dark text-[10px] font-black px-2 py-0.5 rounded">여성기업 인증</span>
+                    </div>
+                    <p class="text-xs text-slate-400">공공시설 유지보수 · 해봄에코그린 · 해봄판넬시스템</p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-xs font-semibold">
+                    <a href="https://blog.naver.com/shd7488" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-xl hover:bg-emerald-600/30 transition-colors">
+                        <i class="fa-solid fa-blog"></i> 공식 네이버 블로그 바로가기
+                    </a>
+                    <a href="tel:010-7488-4641" class="inline-flex items-center gap-2 bg-white/10 text-slate-200 border border-white/20 px-4 py-2 rounded-xl hover:bg-white/20 transition-colors">
+                        <i class="fa-solid fa-phone text-[#E5C26B]"></i> 010-7488-4641
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-400 leading-relaxed">
+                <div>
+                    <p><strong class="text-slate-300">상호명:</strong> 해봄건설 (HB C&C) | <strong class="text-slate-300">대표자:</strong> 서상욱</p>
+                    <p><strong class="text-slate-300">대표전화:</strong> 031-435-1234 | <strong class="text-slate-300">휴대폰:</strong> 010-7488-4641</p>
+                    <p><strong class="text-slate-300">이메일:</strong> shd7488@daum.net</p>
+                </div>
+                <div>
+                    <p><strong class="text-slate-300">주소:</strong> 경기도 시흥시 은계중앙로 306번길 70, 401호</p>
+                    <p><strong class="text-slate-300">주요사업:</strong> 공공시설 유지보수, 학교시설 개보수, 법면녹화, 녹생토, 판넬/가설건축물</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-navy-accent/40 text-center text-xs text-slate-400">
+                <p>&copy; 2026 해봄건설 (HB C&C). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
+        <div class="relative max-w-5xl w-full bg-navy border border-navy-accent rounded-2xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="p-4 border-b border-navy-accent flex justify-between items-center text-white">
+                <h3 id="modalTitle" class="font-bold text-sm text-[#E5C26B]">시공사례 크게 보기</h3>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-2 bg-navy-dark max-h-[80vh] overflow-auto flex items-center justify-center">
+                <img id="modalImg" src="" alt="시공사례 크게보기" class="max-w-full h-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Portfolio Tab Filter
+        function switchTab(tab) {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const buttons = [
+                { id: 'tab-all', key: 'all' },
+                { id: 'tab-p1', key: 'p1' },
+                { id: 'tab-p2', key: 'p2' },
+                { id: 'tab-p3', key: 'p3' }
+            ];
+
+            buttons.forEach(btn => {
+                const el = document.getElementById(btn.id);
+                if (btn.key === tab) {
+                    el.className = 'px-5 py-2.5 rounded-xl font-bold text-xs transition-all gold-button-gradient text-navy-dark shadow-lg';
+                } else {
+                    el.className = 'px-5 py-2.5 rounded-xl font-bold text-xs transition-all bg-navy-light text-slate-300 hover:text-white border border-navy-accent';
+                }
+            });
+
+            cards.forEach(card => {
+                if (tab === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.classList.contains(tab)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Image Lightbox Modal Handler
+        function openModal(imgSrc, title) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalTitle').textContent = title;
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Contact Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("견적 문의가 정상적으로 접수되었습니다.\n담당자(서상욱 이사)가 빠르게 확인 후 연락드리겠습니다.");
+        }
+    </script>
+</body>
+</html>
